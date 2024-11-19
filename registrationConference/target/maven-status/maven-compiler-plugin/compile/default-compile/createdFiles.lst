@@ -1,0 +1,4 @@
+com\mycompany\registrationconference\resources\JakartaEE10Resource.class
+Servlet\SubmitServlet.class
+com\mycompany\registrationconference\JakartaRestConfiguration.class
+NewServletListener.class
