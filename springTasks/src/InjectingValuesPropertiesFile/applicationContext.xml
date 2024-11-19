@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- Properties file -->
+    <context:property-placeholder location="classpath:InjectingValuesPropertiesFile/Application.properties"/>
+    <!-- database Bean -->
+    <bean id = "DatabaseBean" class = "InjectingValuesPropertiesFile.Database">
+          <property name="url" value="${database.url}"/>
+          <property name="password" value="${database.password}"/>
+          <property name="username" value="${database.username}"/>
+    </bean>
+    <!-- car Bean inject with property file constructor injection -->
+    <bean id = "CarBean" class = "InjectingValuesPropertiesFile.Car">
+        <constructor-arg ref="DatabaseBean"/>
+    </bean>
+
+    <!-- Plan Bean inject with property file setter&getter injection -->
+    <bean id = "PlanBean"  class = "InjectingValuesPropertiesFile.Plan">
+
+        <property name="Database" ref="DatabaseBean"/>
+    </bean>
+</beans>

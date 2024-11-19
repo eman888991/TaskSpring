@@ -1,0 +1,14 @@
+We have a backend system that store some vehicles with two types (car , plane) . we need to store the brand of each vehicle into the database.  You will take the database properties details (url , username , password) and store them into a properties file.
+Define a new implementation for the Vehicle interface that contains a method for save data into database
+Define Car Class and Plane class from Vehicle
+Define a application.properties file that contains these values
+database.url = jdbc:mysql://localhost:3306/test
+database.username = ahmed
+database.password = MyPassWord123
+Define a class that will make the database operations
+Use a DatabaseOperation object inside car class and plane class to store their data into the database
+Reference your new implementation in the Spring config file (applicationContext.xml).
+Apply the Constructor injection into Car bean
+Apply the Setter injection into Plane bean
+Retrieve a bean for Car class and store the data into the database
+Retrieve a bean for Plane class and store the data into the database
